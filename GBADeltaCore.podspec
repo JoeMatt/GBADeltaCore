@@ -16,8 +16,7 @@ Pod::Spec.new do |spec|
   spec.resource_bundles = {
     "GBADeltaCore" => ["GBADeltaCore/**/*.deltamapping", "GBADeltaCore/**/*.deltaskin", "visualboyadvance-m/src/vba-over.ini"]
   }
-  
-  spec.dependency 'DeltaCore'
+  spec.swift_version = '5.0'
   
   spec.xcconfig = {
     "HEADER_SEARCH_PATHS" => '"${PODS_CONFIGURATION_BUILD_DIR}" "$(PODS_ROOT)/Headers/Private/GBADeltaCore/SFML/include" "$(PODS_ROOT)/Headers/Private/GBADeltaCore/SFML/src"',
