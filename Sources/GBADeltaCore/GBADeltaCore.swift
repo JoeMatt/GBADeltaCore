@@ -8,6 +8,7 @@
 
 import Foundation
 import AVFoundation
+@_exported import GBASwift
 
 import DeltaCore
 
@@ -17,19 +18,7 @@ public extension GBA
     static let didDeactivateGyroNotification = NSNotification.Name.__GBADidDeactivateGyro
 }
 
-@objc public enum GBAGameInput: Int, Input
-{
-    case up = 64
-    case down = 128
-    case left = 32
-    case right = 16
-    case a = 1
-    case b = 2
-    case l = 512
-    case r = 256
-    case start = 8
-    case select = 4
-    
+extension GBAGameInput: Input {
     public var type: InputType {
         return .game(.gba)
     }
@@ -56,7 +45,7 @@ public struct GBA: DeltaCoreProtocol
         return [actionReplayFormat, gameSharkFormat, codeBreakerFormat]
     }
     
-    public let emulatorBridge: EmulatorBridging = GBAEmulatorBridge.shared
+    public let emulatorBridge: EmulatorBridging = GBAEmulatorBridge.shared as! EmulatorBridging
     
     private init()
     {

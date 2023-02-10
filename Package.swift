@@ -14,6 +14,14 @@ let package = Package(
     products: [
         .library(
             name: "GBADeltaCore",
+            targets: ["GBADeltaCore"]),
+        .library(
+            name: "GBADeltaCoreStatic",
+            type: .static,
+            targets: ["GBADeltaCore"])
+        .library(
+            name: "GBADeltaCoreDynamic",
+            type: .dynamic,
             targets: ["GBADeltaCore"])
     ],
     dependencies: [
@@ -57,6 +65,16 @@ let package = Package(
         .target(
             name: "GBADeltaCore",
             dependencies: ["DeltaCore", "vbam", "GBASwift", "GBABridge"],
+            exclude: [
+                "Resources/Controller Skin/info.json",
+                "Resources/Controller Skin/ipad_landscape.pdf",
+                "Resources/Controller Skin/ipad_portrait.pdf",
+                "Resources/Controller Skin/ipad_splitview_landscape.pdf",
+                "Resources/Controller Skin/iphone_edgetoedge_landscape.pdf",
+                "Resources/Controller Skin/iphone_edgetoedge_portrait.pdf",
+                "Resources/Controller Skin/iphone_landscape.pdf",
+                "Resources/Controller Skin/iphone_portrait.pdf"
+            ],
             resources: [
                 .copy("Resources/Controller Skin/Standard.deltaskin"),
                 .copy("Resources/Standard.deltamapping"),
@@ -82,8 +100,17 @@ let package = Package(
 
         .target(
             name: "vbam",
+            path: "visualboyadvance-m",
             exclude: [
-
+                "cmake/",
+                "doc/",
+                "project/",
+                "CHANGELOG.md",
+                "CMakeLists.txt",
+                "installdeps.sh",
+                "installer.nsi",
+                "README.md",
+                "todo.md"
             ],
             sources: [
 
