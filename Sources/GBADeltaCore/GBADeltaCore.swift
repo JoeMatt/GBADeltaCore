@@ -9,6 +9,8 @@
 import Foundation
 import AVFoundation
 @_exported import GBASwift
+@_exported import GBABridge
+@_exported import visualboyadvance_m
 
 import DeltaCore
 

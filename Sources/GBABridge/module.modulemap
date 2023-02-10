@@ -1,0 +1,6 @@
+module GBABridge {
+    header "GBAEmulatorBridge.h"
+    header "GBATypes.h"
+    header "GBASoundDriver.h"
+    export *
+}

@@ -10,11 +10,6 @@ import Foundation
 
 import DeltaCore
 
-public extension GBA
-{
-    static let didActivateGyroNotification = NSNotification.Name.__GBADidActivateGyro
-    static let didDeactivateGyroNotification = NSNotification.Name.__GBADidDeactivateGyro
-}
 
 @objc public enum GBAGameInput: Int, _Input
 {
@@ -29,17 +24,3 @@ public extension GBA
     case start = 8
     case select = 4
 }
-
-// Expose DeltaCore properties to Objective-C.
-public extension GBAEmulatorBridge
-{
-    @objc(gbaResources) class var __gbaResources: Bundle {
-        return GBA.core.resourceBundle
-    }
-    
-    @objc(coreDirectoryURL) class var __coreDirectoryURL: URL {
-        return _coreDirectoryURL
-    }
-}
-
-private let _coreDirectoryURL = GBA.core.directoryURL

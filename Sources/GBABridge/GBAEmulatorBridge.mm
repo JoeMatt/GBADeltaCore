@@ -8,10 +8,13 @@
 
 #import "GBAEmulatorBridge.h"
 #import "GBASoundDriver.h"
+#import "GBATypes.h"
 
-#import <CoreMotion/CoreMotion.h>
+@import CoreMotion;
+@import DeltaCore;
 
 // VBA-M
+//@import visualboyadvance_m;
 #include "System.h"
 #include "gba/Sound.h"
 #include "gba/GBA.h"
@@ -20,18 +23,6 @@
 #include "Util.h"
 
 #include <sys/time.h>
-
-// DeltaCore
-#import <GBADeltaCore/GBADeltaCore.h>
-#import <DeltaCore/DeltaCore.h>
-#import <DeltaCore/DeltaCore-Swift.h>
-
-#if STATIC_LIBRARY
-#import "GBADeltaCore-Swift.h"
-#import "GBATypes.h"
-#else
-#import <GBADeltaCore/GBADeltaCore-Swift.h>
-#endif
 
 // Required vars, used by the emulator core
 //

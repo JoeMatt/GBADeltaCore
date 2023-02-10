@@ -9,8 +9,7 @@
 #import "GBASoundDriver.h"
 #import "GBAEmulatorBridge.h"
 
-#import <DeltaCore/DeltaCore.h>
-#import <DeltaCore/DeltaCore-Swift.h>
+@import DeltaCore;
 
 GBASoundDriver::GBASoundDriver()
 {
